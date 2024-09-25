@@ -96,11 +96,11 @@ export const siteConfig = {
     },
     {
       title: 'My List',
-      href: '/my-list',
+      //href: '/my-list',
       // icon: Icons.list,
     },
     {
-      title: 'Notifications',
+      //title: 'Notifications',
       //onClick: () => alert('🛹 Do a kickflip'),
       //icon: Icons.bell,
     },
