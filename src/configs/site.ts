@@ -1,4 +1,5 @@
 // import type { FooterItem, MainNavItem } from "@/types"
+//
 // import { productCategories } from "@/config/products"
 // import { slugify } from "@/lib/utils"
 
@@ -9,10 +10,9 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: env.NEXT_PUBLIC_SITE_NAME,
-  author: env.NEXT_PUBLIC_SITE_NAME,
-  slogan: 'Watch TV Shows Online, Watch Movies Online.',
-  description:
-    'Watch movies & TV shows online or stream right to your smart TV, game console, PC, Mac, mobile, tablet and more.',
+  author: env.NEXT_PUBLIC_AUTHOR,
+  slogan: 'Not just a netflix clone',
+  description: 'made by Abyss Studios',
   keywords: [
     'watch movies',
     'movies online',
@@ -33,24 +33,24 @@ export const siteConfig = {
   url: env.NEXT_PUBLIC_APP_URL,
   ogImage: `${env.NEXT_PUBLIC_APP_URL}/images/hero.jpg`,
   links: {
-    twitter: `${env.NEXT_PUBLIC_TWITTER}`,
-    github: 'https://github.com/bitfreee/movie-web-kickstart',
+    twitter: 'https://x.com/theabyssant',
+    github: 'https://github.com/alexander-lucifer',
     githubAccount: '',
   },
   socialLinks: [
     {
       title: 'Facebook',
-      href: `${env.NEXT_PUBLIC_FACEBOOK}`,
+      href: '',
       icon: Icons.facebook,
     },
     {
       title: 'Instagram',
-      href: `${env.NEXT_PUBLIC_INSTAGRAM}`,
+      href: '',
       icon: Icons.instagram,
     },
     {
       title: 'Twitter',
-      href: `${env.NEXT_PUBLIC_TWITTER}`,
+      href: 'https://x.com/theabyssant',
       icon: Icons.twitter,
     },
     {
@@ -92,17 +92,17 @@ export const siteConfig = {
     {
       title: 'New & Popular',
       href: '/new-and-popular',
-      // icon: Icons.trendingUp,
+      //icon: Icons.trendingUp,
     },
-    // {
-    //   title: "My List",
-    //   href: "/my-list",
-    //   // icon: Icons.list,
-    // },
+    {
+      title: 'My List',
+      href: '/my-list',
+      // icon: Icons.list,
+    },
     {
       title: 'Notifications',
-      // onClick: () => alert("🛹 Do a kickflip"),
-      // icon: Icons.bell,
+      //onClick: () => alert('🛹 Do a kickflip'),
+      //icon: Icons.bell,
     },
   ],
 };
