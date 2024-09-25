@@ -28,7 +28,7 @@ export default function Index() {
           {/* Not just a N*tf*lix clone */}
         </h1>
         <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-          Powered by Vidsrc and Abyss Studios
+          Powered by Abyss Studios
         </p>
         <div className="space-x-4">
           <Link className={`${buttonVariants({ size: 'lg' })}`} href="/home">
