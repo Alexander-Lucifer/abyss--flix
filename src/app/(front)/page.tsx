@@ -18,7 +18,7 @@ export default function Index() {
             className="rounded-md px-3.5 py-1.5"
             variant="secondary">
             <Icons.twitter className="mr-2 h-3.5 w-3.5" />
-            Follow me
+            Follow me on twitter
           </Badge>
           <span className="sr-only">Twitter</span>
         </Link>
