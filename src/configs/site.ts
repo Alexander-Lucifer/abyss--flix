@@ -96,7 +96,7 @@ export const siteConfig = {
     },
     {
       title: 'My List',
-      //href: '/my-list',
+      href: '/my-list',
       // icon: Icons.list,
     },
     {
