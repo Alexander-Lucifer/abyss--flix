@@ -10,7 +10,7 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: env.NEXT_PUBLIC_SITE_NAME,
-  author: env.NEXT_PUBLIC_AUTHOR,
+  author: "Suryanshu Mittal",
   slogan: 'Not just a netflix clone',
   description: 'made by Abyss Studios',
   keywords: [
