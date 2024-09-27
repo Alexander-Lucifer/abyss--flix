@@ -13,7 +13,7 @@ interface ShowsSkeletonProps {
 }
 
 const ShowsSkeleton = ({
-  count = 6,
+  count = 12,
   classname = '',
   variant = 'with-title',
 }: ShowsSkeletonProps) => {
@@ -33,9 +33,9 @@ const ShowsSkeleton = ({
               'xxs:grid-cols-2 xxs:gap-x-1.5 xxs:gap-y-5 mt-2.5 grid w-fit gap-y-3.5 xs:grid-cols-3 xs:gap-y-7 sm:grid-cols-3 sm:gap-y-10 md:grid-cols-4 md:gap-y-12 lg:gap-y-14 xl:grid-cols-6 xl:gap-y-16',
               searchStore.query && 'max-sm:grid-cols-3 max-[375px]:grid-cols-2',
             )}
-            // initial="hidden"
-            // animate="visible"
-            // variants={itemsReveal}>
+            //initial="hidden"
+            //animate="visible"
+            //variants={itemsReveal}>
           >
             {Array.from({ length: count }, (_, i) => (
               <motion.div key={i} variants={itemFade}>

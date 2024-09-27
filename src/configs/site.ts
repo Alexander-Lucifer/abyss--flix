@@ -10,7 +10,7 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: env.NEXT_PUBLIC_SITE_NAME,
-  author: "Suryanshu Mittal",
+  author: 'Suryanshu Mittal',
   slogan: 'Not just a netflix clone',
   description: 'made by Abyss Studios',
   keywords: [
@@ -60,18 +60,18 @@ export const siteConfig = {
     },
   ],
   footerItems: [
-    { title: 'Audio Description', href: '/' },
-    { title: 'Help Center', href: '/' },
-    { title: 'Gift Cards', href: '/' },
-    { title: 'Media Center', href: '/' },
-    { title: 'Investor Relations', href: '/' },
-    { title: 'Jobs', href: '/' },
+    //{ title: 'Audio Description', href: '/' },
+    //{ title: 'Help Center', href: '/' },
+    //{ title: 'Gift Cards', href: '/' },
+    //{ title: 'Media Center', href: '/' },
+    //{ title: 'Investor Relations', href: '/' },
+    //{ title: 'Jobs', href: '/' },
     { title: 'Terms of Use', href: '/terms-of-use' },
     { title: 'Privacy', href: '/' },
     { title: 'Legal Notices', href: '/' },
     { title: 'Cookie Preferences', href: '/' },
-    { title: 'Corporate Information', href: '/' },
-    { title: 'Contact Us', href: '/' },
+    //{ title: 'Corporate Information', href: '/' },
+    //{ title: 'Contact Us', href: '/' },
   ],
   mainNav: [
     {
