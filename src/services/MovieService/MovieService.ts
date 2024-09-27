@@ -23,7 +23,7 @@ const requestTypesNeedUpdateMediaType = [
   RequestType.POPULAR,
   RequestType.GENRE,
   RequestType.KOREAN,
-  RequestType.TRENDING,
+  //RequestType.TRENDING,
 ];
 const baseUrl = 'https://api.themoviedb.org/3';
 
