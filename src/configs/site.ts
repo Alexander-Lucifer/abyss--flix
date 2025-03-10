@@ -31,7 +31,7 @@ export const siteConfig = {
     env.NEXT_PUBLIC_SITE_NAME,
   ],
   url: env.NEXT_PUBLIC_APP_URL,
-  ogImage: `${env.NEXT_PUBLIC_APP_URL}/images/hero.jpg`,
+  ogImage: `public/logo.jpg`,
   links: {
     twitter: 'https://x.com/theabyssant',
     github: 'https://github.com/alexander-lucifer',
