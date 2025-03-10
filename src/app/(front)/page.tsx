@@ -23,7 +23,7 @@ export default function Index() {
           <span className="sr-only">Twitter</span>
         </Link>
         <h1 className="max-w-screen-lg text-center font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
-          {siteConfig.name} - {siteConfig.slogan}
+          <img src="\public\images\logo.png" alt="Netflix" />
           {/* {siteConfig.name} - A video streaming platform By Abyss Studios */}
           {/* Not just a N*tf*lix clone */}
         </h1>
