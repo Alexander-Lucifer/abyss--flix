@@ -22,7 +22,7 @@ export const Icons = {
   chevronRight: ChevronRight,
   info: Info,
   search: Search,
-  logo: PlayIcon,
+  logo: "public\images\logo.png",
   play: PlayIcon,
   pause: Pause,
   volume: Volume2,
