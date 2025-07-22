@@ -53,18 +53,27 @@ export function DebouncedInput({
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [onChange, onChangeStatusOpen]);
+
+  const [localValue, setLocalValue] = React.useState(value);
+
+  // Sync local value with prop value
+  React.useEffect(() => {
+    setLocalValue(value);
+  }, [value]);
 
   const debounceInput = React.useCallback(
     debounce((value) => {
       const strValue = value as string;
       void onChange(strValue);
     }, debounceTimeout),
-    [],
+    [onChange, debounceTimeout],
   );
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    debounceInput(event.target.value);
+    const newValue = event.target.value;
+    setLocalValue(newValue);
+    debounceInput(newValue);
   };
 
   return (
@@ -81,7 +90,7 @@ export function DebouncedInput({
             : 'w-0 border-none bg-transparent',
           className,
         )}
-        defaultValue={value}
+        value={localValue}
         maxLength={maxLength}
         onChange={handleChange}
         {...props}

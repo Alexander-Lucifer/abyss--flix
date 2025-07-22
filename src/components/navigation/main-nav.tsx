@@ -78,6 +78,7 @@ export function MainNav({ items }: MainNavProps) {
 
   async function searchShowsByQuery(value: string) {
     if (!value?.trim()?.length) {
+      searchStore.reset();
       if (path === '/search') {
         router.push('/home');
       } else {
@@ -86,17 +87,32 @@ export function MainNav({ items }: MainNavProps) {
       return;
     }
 
-    if (getSearchValue('q')?.trim()?.length) {
-      window.history.replaceState(null, '', `search?q=${value}`);
-    } else {
-      window.history.pushState(null, '', `search?q=${value}`);
-    }
-
+    // Immediately update the search state for real-time UI updates
     searchStore.setQuery(value);
     searchStore.setLoading(true);
-    const shows = await MovieService.searchMovies(value);
-    searchStore.setLoading(false);
-    void searchStore.setShows(shows.results);
+    searchStore.setOpen(true);
+
+    // Navigate to search page if not already there
+    if (path !== '/search') {
+      router.push(`/search?q=${encodeURIComponent(value)}`);
+    } else {
+      // Update URL if already on search page
+      window.history.replaceState(
+        null,
+        '',
+        `search?q=${encodeURIComponent(value)}`,
+      );
+    }
+
+    try {
+      const shows = await MovieService.searchMovies(value);
+      searchStore.setShows(shows.results);
+    } catch (error) {
+      console.error('Search error:', error);
+      searchStore.setShows([]);
+    } finally {
+      searchStore.setLoading(false);
+    }
 
     if (typeof window !== 'undefined') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
