@@ -32,7 +32,15 @@ function SearchContainer({ shows, query }: SearchContainer) {
       clearTimeout(timer1);
       clearTimeout(timer2);
     };
-  }, [query, shows, searchStore]);
+  }, [
+    query,
+    shows,
+    searchStore.query,
+    searchStore.shows.length,
+    searchStore.setOpen,
+    searchStore.setQuery,
+    searchStore.setShows,
+  ]);
 
   // Use search store data for real-time updates, fallback to props for initial load
   const displayShows =

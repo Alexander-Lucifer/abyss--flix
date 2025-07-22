@@ -40,13 +40,20 @@ export function MainNav({ items }: MainNavProps) {
   // search store
   const searchStore = useSearchStore();
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const [isClient, setIsClient] = React.useState(false);
+
+  // Prevent hydration mismatch
+  React.useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   React.useEffect(() => {
+    if (!isClient) return;
     window.addEventListener('popstate', handlePopstateEvent, false);
     return () => {
       window.removeEventListener('popstate', handlePopstateEvent, false);
     };
-  }, []);
+  }, [isClient]);
 
   const handlePopstateEvent = () => {
     const pathname = window.location.pathname;

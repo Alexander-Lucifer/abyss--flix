@@ -28,6 +28,12 @@ export function DebouncedInput({
   ...props
 }: DebouncedInputProps) {
   const inputRef = React.useRef<HTMLInputElement>(null);
+  const [isClient, setIsClient] = React.useState(false);
+
+  // Prevent hydration mismatch
+  React.useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   // close search input on clicking outside,
   useOnClickOutside(inputRef, () => {
@@ -36,6 +42,8 @@ export function DebouncedInput({
 
   // configure keyboard shortcuts
   React.useEffect(() => {
+    if (!isClient) return;
+
     const handleKeyDown = (e: KeyboardEvent) => {
       // close search input on pressing escape
       if (e.key === 'Escape') {
@@ -53,7 +61,7 @@ export function DebouncedInput({
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [onChange, onChangeStatusOpen]);
+  }, [onChange, onChangeStatusOpen, isClient]);
 
   const [localValue, setLocalValue] = React.useState(value);
 
